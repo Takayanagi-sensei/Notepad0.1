@@ -31,6 +31,7 @@ _Daily Journal_:
 - **Excel to notepad**: Beyond Notepad, Microsoft Excel is another essential tool in our daily workflows. But transferring data from Excel to Notepad can often feel tedious. That's where this Notepad's innovative Excel-to-Notepad Converter comes in! With just a few clicks, you can effortlessly bring any Excel file's data into Notepad, simplifying your workflow and saving you time.
   
 ![image](https://github.com/user-attachments/assets/5ffd8ec5-508a-4a95-8aae-ac607175f68b)
+![image](https://github.com/user-attachments/assets/262c5054-fe04-457b-bba5-d94846d3d052)
 
 ![image](https://github.com/user-attachments/assets/fc2d9514-aa06-4c8a-8a67-97901ca14917)
 
