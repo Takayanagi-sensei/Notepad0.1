@@ -8,7 +8,7 @@ You are very much welcome to Notepad0.1! This lightweight, intuitive text editor
 
 - **Simple Text Editing**: Create, open, edit, and save text files with ease.
 - **Formatting Options**: Basic text formatting like changing font style, size, and color to personalize your notes.
-   ![image](https://github.com/user-attachments/assets/b868e6e6-4123-4250-ba26-29dd28d3e02c)
+  ![image](https://github.com/user-attachments/assets/b868e6e6-4123-4250-ba26-29dd28d3e02c)
 - **Row & column counter**: Real-time row and column count for keeping track of your writing goals.
   ![image](https://github.com/user-attachments/assets/00c143de-825b-4c91-826f-7e2c4820f7a8)   
 - **Undo & Redo**: Mistakes are easily fixed with unlimited undo and redo actions.
@@ -29,6 +29,7 @@ _Daily Journal_:
 ![image](https://github.com/user-attachments/assets/22d54822-4712-4cd5-ac68-b5ce698cdc17)
 
 - **Excel to notepad**: Beyond Notepad, Microsoft Excel is another essential tool in our daily workflows. But transferring data from Excel to Notepad can often feel tedious. That's where this Notepad's innovative Excel-to-Notepad Converter comes in! With just a few clicks, you can effortlessly bring any Excel file's data into Notepad, simplifying your workflow and saving you time.
+  
 ![image](https://github.com/user-attachments/assets/5ffd8ec5-508a-4a95-8aae-ac607175f68b)
 
 ![image](https://github.com/user-attachments/assets/fc2d9514-aa06-4c8a-8a67-97901ca14917)
@@ -37,11 +38,31 @@ _Daily Journal_:
 ## Getting Started
 To run this program you can follow my [user manual](https://github.com/Takayanagi-sensei/Notepad0.1/blob/master/User%20manual).
 
-## Usage
+## Short Manual
 
-- **Creating a New File**: Go to `File` > `New` to start a new document.
-- **Opening an Existing File**: Select `File` > `Open` and choose the file you want to edit.
-- **Saving Your Work**: Click `File` > `Save` or `Save As` to save your notes.
-- **Using Find & Replace**: Navigate to `Edit` > `Find` to search or `Edit` > `Replace` to replace words or phrases.
-- **Changing Text Format**: Use the `Format` menu to customize font type, size, and color.
+- **Creating a New File**: Go to `File` > `New` to start a new document or _Ctrl + n_.
+- **Opening an Existing File**: Select `File` > `Open` and choose the file you want to edit or _Ctrl + o_.
+- **Saving Your Work**: Click `File` > `Save` or `Save As` to save your notes or _Ctrl + s_.
+- **Close the program**: Click `File` > `Exit` or _Alt + F4_.
+- **Undo anything**: Click `Edit` > `undo` or _Ctrl + z_.
+- **Redo anything**: Click `Edit` > `redo` or _Ctrl + y_.
+- **Copy**: Click `Edit` > `copy` or _Ctrl + c_.
+- **Paste**: Click `Edit` > `paste` or _Ctrl + v_.
+- **Clear everything**: Click `Edit` > `delete`.
+- **Select everything**: Click `Edit` > `select all`.
+- **Find & Highlight word**: Click `Edit` > `Highlight Words`.
+- **Bold selected words**: Click `Edit` > `Bold`.
+- **Change color of selected text**: Click `Edit` > `color`.
+- **Provide current time and date**: Click `Edit` > `time/date`.
+- **Make a bullet point**: Click `Edit` > `bullet`.
+- **Generate a excel table & convert excel file to notepad**: Click `Edit` > `table`.
+- **Open a excel file & convert excel file to notepad**: Click `Edit` > `import table`.
+- **Changing Text Format**: Use the `Format` menu > `Fonts...`.
+- **To do list template**: Use the `template` menu > `To do`.
+- **Daily journal template**: Use the `template` menu > `Daily journal`.
+- **Zoom in**: Use the `View` menu > `Zoom in`.
+- **Zoom out**: Use the `View` menu > `Zoom out`.
+- **Author of this program**: Use the `Help` menu > `Info`.
 
+-------------------------------------------------------------------------
+I hope you enjoy my notepad :)
