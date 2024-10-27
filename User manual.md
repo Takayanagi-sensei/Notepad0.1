@@ -10,9 +10,9 @@ Here is a step by step Guide for a user to install and run this file in his visu
 1. **Clone the Repository**:
    - Open a terminal and clone the repository with:
      ```bash
-     git clone https://github.com/YourUsername/YourRepositoryName.git
+     git clone https://github.com/Takayanagi-sensei/Notepad0.1.git
      ```
-   - Alternatively, you can download the repository as a ZIP file and extract it.
+    Or, you can download the repository as a ZIP file and extract it.
 
 2. **Open in Visual Studio**:
    - Launch Visual Studio.
