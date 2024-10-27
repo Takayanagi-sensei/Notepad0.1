@@ -40,3 +40,6 @@ If You don't have these packages than download these or higher version to run th
 4. **Build and Run the Application**:
    - In the Solution Explorer, right-click on the project and select **Build**.
    - Once the build is complete, click **Start** or press `F5` to run the application.
+
+---------------------------------------------------------------------------------------------------
+If you only want to use the application directly [**download**](https://github.com/Takayanagi-sensei/Notepad0.1/releases/download/Application/Notepad0.1.exe) the application.
