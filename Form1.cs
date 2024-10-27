@@ -21,15 +21,16 @@ namespace Notepad0._1
         public Form1()
         {
             InitializeComponent();
+            //To access this forms functions in other forms
             Instance = this;
             MainRichTextBox = richTextBox1;
         }
-
+        //delete all
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
         }
-
+        //opening a file
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -41,7 +42,7 @@ namespace Notepad0._1
             }
             this.Text = ofd.FileName;
         }
-
+        //saving a file
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
@@ -53,6 +54,7 @@ namespace Notepad0._1
             }
             this.Text = sfd.FileName;
         }
+
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -66,32 +68,33 @@ namespace Notepad0._1
             this.Text = sfd.FileName;
         }
 
+        // exiting the application
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        //reversing any mistake
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Undo();
         }
-
+        //redoing any text deleted recently
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Redo(); 
 
         }
-
+        // Event handler for Cut action
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Cut();
         }
-
+        // Event handler for copy action
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Copy();
         }
-
+        // Event handler for Paste action
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Paste();
@@ -106,7 +109,7 @@ namespace Notepad0._1
         {
             richTextBox1.SelectAll();
         }
-
+        // Event handler to insert current time and date
         private void timeDateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DateTime dt= DateTime.Now;
@@ -143,7 +146,7 @@ namespace Notepad0._1
                 richTextBox1.SelectionFont = boldFont;
             }
         }
-
+        // Variables for managing zoom factor
         private float zoomFactor = 1.0f;
         private void zoomToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -166,6 +169,7 @@ namespace Notepad0._1
             }
         }
 
+        // Event handler for Find feature
         private void findToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string wordToFind = richTextBox1.Text;
@@ -190,12 +194,13 @@ namespace Notepad0._1
                 MessageBox.Show("Please enter a word to find.", "Find");
             }
         }
-
+        // Load event for Form1
         private void Form1_Load(object sender, EventArgs e)
         {
             
         }
 
+        // Event handler for toggling bullet points
         private void bulletToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.SelectionBullet = !richTextBox1.SelectionBullet;
@@ -237,6 +242,7 @@ namespace Notepad0._1
 
         }
 
+        //for searching using google using right click functionality
         private void searchWithGoogleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -265,13 +271,13 @@ namespace Notepad0._1
 
         }
 
-        
+        //updating status information
 
         private void richTextBox1_SelectionChanged(object sender, EventArgs e)
         {
             UpdateStatus();
         }
-
+        //live update line and column status
         private void UpdateStatus()
         {
             int pos = richTextBox1.SelectionStart;
@@ -284,7 +290,9 @@ namespace Notepad0._1
         {
 
         }
+        //template part
 
+        //to do template
         private void toDoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.AppendText(Environment.NewLine + "To Do:" + Environment.NewLine );
@@ -293,7 +301,9 @@ namespace Notepad0._1
             richTextBox1.SelectionBullet = false;
         }
 
-            public string[,] ImportDataFromExcel(string filePath)
+
+        //Method to import data from an Excel file
+        public string[,] ImportDataFromExcel(string filePath)
         {
            
             Excel.Application excelApp = new Excel.Application();
@@ -322,6 +332,8 @@ namespace Notepad0._1
 
             return data;
         }
+
+        // Method to generate a table from imported data
         public void GenerateDashTable(string[,] data, RichTextBox richTextBox2)
         {
             int rowCount = data.GetLength(0);
@@ -358,6 +370,8 @@ namespace Notepad0._1
 
             richTextBox2.Text += tableBuilder.ToString();
         }
+
+        // Method for importing from an Excel file via Form3
         public void import()
         {
             Form3 form3 = new Form3();
@@ -371,6 +385,7 @@ namespace Notepad0._1
             }
             
         }
+        //import method for directly selecting an Excel file
         public void import_1()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
