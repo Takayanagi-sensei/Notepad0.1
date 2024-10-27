@@ -3,7 +3,6 @@ Here is a step by step Guide for a user to install and run this file in his visu
 ### Prerequisites
 
 - **Visual Studio**: Ensure that you have [Visual Studio](https://visualstudio.microsoft.com/) installed on your machine.
-- **.NET Framework (if applicable)**: Make sure you have the required .NET version (you may specify the version here if needed).
 
 ### Installation
 
