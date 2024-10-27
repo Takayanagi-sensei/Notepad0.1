@@ -54,14 +54,18 @@
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timeDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bulletToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.templateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toDoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dailyJournalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zoomOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,24 +73,26 @@
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.status = new System.Windows.Forms.ToolStripStatusLabel();
-            this.dailyJournalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
             this.richTextBox1.ContextMenuStrip = this.contextMenuStrip1;
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(0, 31);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(1011, 410);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
-            this.richTextBox1.ZoomFactor = 1.5F;
+            this.richTextBox1.WordWrap = false;
+            this.richTextBox1.ZoomFactor = 1.25F;
             this.richTextBox1.SelectionChanged += new System.EventHandler(this.richTextBox1_SelectionChanged);
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
@@ -232,10 +238,13 @@
             this.pasteToolStripMenuItem,
             this.deleteToolStripMenuItem,
             this.selectAllToolStripMenuItem,
+            this.findToolStripMenuItem,
             this.boldToolStripMenuItem,
             this.colorToolStripMenuItem,
             this.timeDateToolStripMenuItem,
-            this.bulletToolStripMenuItem});
+            this.bulletToolStripMenuItem,
+            this.tableToolStripMenuItem,
+            this.importTableToolStripMenuItem});
             this.editToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Emoji", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(53, 27);
@@ -245,7 +254,7 @@
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.undoToolStripMenuItem.Text = "&Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
@@ -253,7 +262,7 @@
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.redoToolStripMenuItem.Text = "&Redo";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
@@ -261,7 +270,7 @@
             // 
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.cutToolStripMenuItem.Text = "&Cut";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
@@ -269,7 +278,7 @@
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.copyToolStripMenuItem.Text = "&Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
@@ -277,51 +286,72 @@
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.pasteToolStripMenuItem.Text = "&Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.deleteToolStripMenuItem.Text = "&Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // selectAllToolStripMenuItem
             // 
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.selectAllToolStripMenuItem.Text = "&Select all";
             this.selectAllToolStripMenuItem.Click += new System.EventHandler(this.selectAllToolStripMenuItem_Click);
+            // 
+            // findToolStripMenuItem
+            // 
+            this.findToolStripMenuItem.Name = "findToolStripMenuItem";
+            this.findToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.findToolStripMenuItem.Text = "&Highlight Words";
+            this.findToolStripMenuItem.Click += new System.EventHandler(this.findToolStripMenuItem_Click_1);
             // 
             // boldToolStripMenuItem
             // 
             this.boldToolStripMenuItem.Name = "boldToolStripMenuItem";
-            this.boldToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.boldToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.boldToolStripMenuItem.Text = "&Bold";
             this.boldToolStripMenuItem.Click += new System.EventHandler(this.boldToolStripMenuItem_Click);
             // 
             // colorToolStripMenuItem
             // 
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.colorToolStripMenuItem.Text = "Color";
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.colorToolStripMenuItem.Text = "&Color";
             this.colorToolStripMenuItem.Click += new System.EventHandler(this.colorToolStripMenuItem_Click);
             // 
             // timeDateToolStripMenuItem
             // 
             this.timeDateToolStripMenuItem.Name = "timeDateToolStripMenuItem";
-            this.timeDateToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.timeDateToolStripMenuItem.Text = "Time/Date";
+            this.timeDateToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.timeDateToolStripMenuItem.Text = "&Time/Date";
             this.timeDateToolStripMenuItem.Click += new System.EventHandler(this.timeDateToolStripMenuItem_Click);
             // 
             // bulletToolStripMenuItem
             // 
             this.bulletToolStripMenuItem.Name = "bulletToolStripMenuItem";
-            this.bulletToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bulletToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.bulletToolStripMenuItem.Text = "&Bullet";
             this.bulletToolStripMenuItem.Click += new System.EventHandler(this.bulletToolStripMenuItem_Click);
+            // 
+            // tableToolStripMenuItem
+            // 
+            this.tableToolStripMenuItem.Name = "tableToolStripMenuItem";
+            this.tableToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.tableToolStripMenuItem.Text = "&Table";
+            this.tableToolStripMenuItem.Click += new System.EventHandler(this.tableToolStripMenuItem_Click);
+            // 
+            // importTableToolStripMenuItem
+            // 
+            this.importTableToolStripMenuItem.Name = "importTableToolStripMenuItem";
+            this.importTableToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.importTableToolStripMenuItem.Text = "&Import Table";
+            this.importTableToolStripMenuItem.Click += new System.EventHandler(this.importTableToolStripMenuItem_Click);
             // 
             // formatToolStripMenuItem
             // 
@@ -355,6 +385,13 @@
             this.toDoToolStripMenuItem.Text = "To Do List";
             this.toDoToolStripMenuItem.Click += new System.EventHandler(this.toDoToolStripMenuItem_Click);
             // 
+            // dailyJournalToolStripMenuItem
+            // 
+            this.dailyJournalToolStripMenuItem.Name = "dailyJournalToolStripMenuItem";
+            this.dailyJournalToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dailyJournalToolStripMenuItem.Text = "Daily Journal";
+            this.dailyJournalToolStripMenuItem.Click += new System.EventHandler(this.dailyJournalToolStripMenuItem_Click);
+            // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -369,14 +406,14 @@
             // zoomToolStripMenuItem
             // 
             this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
-            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
             this.zoomToolStripMenuItem.Text = "&Zoom in";
             this.zoomToolStripMenuItem.Click += new System.EventHandler(this.zoomToolStripMenuItem_Click);
             // 
             // zoomOutToolStripMenuItem
             // 
             this.zoomOutToolStripMenuItem.Name = "zoomOutToolStripMenuItem";
-            this.zoomOutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.zoomOutToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
             this.zoomOutToolStripMenuItem.Text = "&Zoom Out";
             this.zoomOutToolStripMenuItem.Click += new System.EventHandler(this.zoomOutToolStripMenuItem_Click);
             // 
@@ -394,7 +431,7 @@
             // 
             this.infoToolStripMenuItem.CheckOnClick = true;
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(124, 26);
             this.infoToolStripMenuItem.Text = "&Info";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
@@ -416,13 +453,6 @@
             this.status.Text = "Line -> 0 Column -> 0";
             this.status.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
-            // dailyJournalToolStripMenuItem
-            // 
-            this.dailyJournalToolStripMenuItem.Name = "dailyJournalToolStripMenuItem";
-            this.dailyJournalToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.dailyJournalToolStripMenuItem.Text = "Daily Journal";
-            this.dailyJournalToolStripMenuItem.Click += new System.EventHandler(this.dailyJournalToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
@@ -443,6 +473,7 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -490,6 +521,10 @@
         private System.Windows.Forms.ToolStripMenuItem templateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toDoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dailyJournalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tableToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.ToolStripMenuItem importTableToolStripMenuItem;
     }
 }
 

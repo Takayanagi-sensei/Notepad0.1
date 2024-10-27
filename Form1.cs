@@ -5,19 +5,24 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Notepad0._1
 {
     public partial class Form1 : Form
     {
+        public static Form1 Instance;
+        public RichTextBox MainRichTextBox;
         public Form1()
         {
             InitializeComponent();
-            
+            Instance = this;
+            MainRichTextBox = richTextBox1;
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -142,7 +147,7 @@ namespace Notepad0._1
         private float zoomFactor = 1.0f;
         private void zoomToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            zoomFactor += 1f;
+            zoomFactor += 0.25f;
 
             richTextBox1.ZoomFactor = zoomFactor;
         }
@@ -156,7 +161,7 @@ namespace Notepad0._1
         {
             if (zoomFactor > 1f)
             {
-                zoomFactor -= 1f;
+                zoomFactor -= 0.25f;
                 richTextBox1.ZoomFactor = zoomFactor;
             }
         }
@@ -234,16 +239,15 @@ namespace Notepad0._1
 
         private void searchWithGoogleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Get the selected text from the TextBox
+            
             string selectedText = richTextBox1.SelectedText;
 
-            // Check if text is selected
+            
             if (!string.IsNullOrEmpty(selectedText))
             {
-                // Format the Google search URL
+               
                 string googleSearchUrl = $"https://www.google.com/search?q={Uri.EscapeDataString(selectedText)}";
 
-                // Open the default browser with the Google search
                 Process.Start(new ProcessStartInfo
                 {
                     FileName = googleSearchUrl,
@@ -283,19 +287,126 @@ namespace Notepad0._1
 
         private void toDoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            richTextBox1.AppendText(Environment.NewLine + "Title" + Environment.NewLine );
+            richTextBox1.AppendText(Environment.NewLine + "To Do:" + Environment.NewLine );
             richTextBox1.SelectionBullet = true;
-            richTextBox1.AppendText("First Task" + Environment.NewLine);
-            richTextBox1.AppendText("Second Task" + Environment.NewLine);
-            richTextBox1.AppendText("Third Task" + Environment.NewLine);
+            richTextBox1.AppendText(Environment.NewLine);
             richTextBox1.SelectionBullet = false;
         }
 
+            public string[,] ImportDataFromExcel(string filePath)
+        {
+           
+            Excel.Application excelApp = new Excel.Application();
+
+            Excel.Workbook workbook = excelApp.Workbooks.Open(filePath);
+            Excel.Worksheet worksheet = workbook.Sheets[1];
+            Excel.Range range = worksheet.UsedRange;
+
+            int rowCount = range.Rows.Count;
+            int colCount = range.Columns.Count;
+
+            string[,] data = new string[rowCount, colCount];
+
+            for (int i = 1; i <= rowCount; i++)
+            {
+                for (int j = 1; j <= colCount; j++)
+                {
+                    data[i - 1, j - 1] = Convert.ToString(range.Cells[i, j].Value2);
+                }
+            }
+
+            workbook.Close(false);
+            Marshal.ReleaseComObject(workbook);
+            excelApp.Quit();
+            Marshal.ReleaseComObject(excelApp);
+
+            return data;
+        }
+        public void GenerateDashTable(string[,] data, RichTextBox richTextBox2)
+        {
+            int rowCount = data.GetLength(0);
+            int colCount = data.GetLength(1);
+
+            int[] colWidths = new int[colCount];
+            for (int col = 0; col < colCount; col++)
+            {
+                colWidths[col] = Enumerable.Range(0, rowCount)
+                    .Select(row => data[row, col]?.Length ?? 0)
+                    .Max();
+            }
+
+            StringBuilder tableBuilder = new StringBuilder();
+
+            string separator = "+";
+            for (int i = 0; i < colWidths.Length; i++)
+            {
+                separator += new string('-', colWidths[i] + 2) + "+";
+            }
+            tableBuilder.AppendLine(separator);
+
+            for (int row = 0; row < rowCount; row++)
+            {
+                string rowLine = "|";
+                for (int col = 0; col < colCount; col++)
+                {
+                    string cellData = data[row, col] ?? string.Empty;
+                    rowLine += " " + cellData.PadRight(colWidths[col]) + " |";
+                }
+                tableBuilder.AppendLine(rowLine);
+                tableBuilder.AppendLine(separator);
+            }
+
+            richTextBox2.Text += tableBuilder.ToString();
+        }
+        public void import()
+        {
+            Form3 form3 = new Form3();
+            if (form3.ShowDialog() == DialogResult.OK)
+            {
+                
+
+               
+                GenerateDashTable(Form3.instance.data_table, richTextBox1);
+                
+            }
+            
+        }
+        public void import_1()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel Workbook|*.xlsx;*.xls";
+            openFileDialog.Title = "Select an Excel File";
+
+    
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                
+                string filePath = openFileDialog.FileName;
+
+              
+                string[,] data = ImportDataFromExcel(filePath);
+
+
+                GenerateDashTable(data, richTextBox1);
+            }
+
+        }
+        private void tableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.AppendText(Environment.NewLine);
+            import();
+             
+        }
+        private void importTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.AppendText(Environment.NewLine);
+            import_1();
+        }
         private void dailyJournalToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             richTextBox1.AppendText(Environment.NewLine + "Daily Journal" + Environment.NewLine);
-            richTextBox1.AppendText(                      "~~~~~~~~~~" + Environment.NewLine);
+            richTextBox1.AppendText(                      "-------------" + Environment.NewLine);
             richTextBox1.AppendText("Date: " + Environment.NewLine);
             richTextBox1.AppendText(Environment.NewLine);
             richTextBox1.AppendText("Describe the day:" + Environment.NewLine);
@@ -307,6 +418,46 @@ namespace Notepad0._1
 
 
 
+        }
+        public void HighlightText(string word)
+        {
+            richTextBox1.SelectAll();
+            richTextBox1.SelectionBackColor = Color.White;
+            richTextBox1.DeselectAll();
+
+            
+            int startIndex = 0;
+            while (startIndex < richTextBox1.TextLength)
+            {
+                int wordStartIndex = richTextBox1.Find(word, startIndex, RichTextBoxFinds.None);
+                if (wordStartIndex != -1)
+                {
+                    richTextBox1.SelectionStart += wordStartIndex;
+                    richTextBox1.SelectionLength = word.Length;
+                    richTextBox1.SelectionBackColor = Color.Yellow;
+                    startIndex = wordStartIndex + word.Length;
+                }
+                else
+                    break;
+            }
+
+        }
+        public void normal()
+        {
+            richTextBox1.SelectAll();
+            richTextBox1.SelectionBackColor = Color.White;
+            richTextBox1.DeselectAll();
+        }
+            private void findToolStripMenuItem_Click_1(object sender, EventArgs e)
+            {
+            Highlighter findForm = new Highlighter();
+            findForm.Show();
+            }
+
+        private void buttonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
         }
     }
 }
