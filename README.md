@@ -2,7 +2,7 @@
 
 # Welcome
 
-You are very much welcome to Notepad0.1! This lightweight, intuitive text editor is designed to make writing, editing, and managing your notes simple and efficient. Our Notepad application incorporates all the essential features you'd expect from a classic notepad editor, making it a versatile tool for anyone needing quick note-taking and editing on the go.
+Welcome to Notepad0.1! This lightweight, intuitive text editor is crafted to make writing, editing, and organizing your notes seamless and efficient. With Notepad0.1, you get all the essential features you’d expect from a classic notepad, along with a few thoughtful upgrades, making it the perfect tool for quick note-taking and editing anytime, anywhere.
 
 ## Features
 
@@ -34,9 +34,16 @@ _Daily Journal_:
 
 ![image](https://github.com/user-attachments/assets/fc2d9514-aa06-4c8a-8a67-97901ca14917)
 
+- **Table generator**: Imagine having the flexibility of a spreadsheet right inside your notepad! With the Table Generator, you’re no longer limited by rows and columns. Open an Excel-like tab where you can freely add as many rows and columns as you need, without any initial setup. Effortlessly expand your tables on-the-go, making data management smooth, intuitive, and powerful—perfect for all your quick data needs.
+
+  ![image](https://github.com/user-attachments/assets/ab369eb5-77cd-43e5-9241-ad1214fe37f5)
+  ![image](https://github.com/user-attachments/assets/2ad6f65a-5667-4de3-a3b8-8f6ef77a80e9)
+  ![image](https://github.com/user-attachments/assets/f81cddc8-473c-4443-a23d-1f843d64206d)
+  ![image](https://github.com/user-attachments/assets/ea53bd58-32ed-4690-bc2b-e096a8619dac)
+
 
 ## Getting Started
-To run this program you can follow my [user manual](https://github.com/Takayanagi-sensei/Notepad0.1/blob/master/User%20manual).
+To run this program on your pc you can follow my step by step [guide](https://github.com/Takayanagi-sensei/Notepad0.1/blob/master/User%20manual).
 
 ## Short Manual
 
