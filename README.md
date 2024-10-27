@@ -1,14 +1,15 @@
-Here’s a sample README for your Notepad application:
+
 
 ---
 
-# Notepad Application
+# Welcome
 
-Welcome to the Notepad Application! This lightweight, intuitive text editor is designed to make writing, editing, and managing your notes simple and efficient. Our Notepad application incorporates all the essential features you'd expect from a classic notepad editor, making it a versatile tool for anyone needing quick note-taking and editing on the go.
+You are very much welcome to Notepad1.0 ! This lightweight, intuitive text editor is designed to make writing, editing, and managing your notes simple and efficient. Our Notepad application incorporates all the essential features you'd expect from a classic notepad editor, making it a versatile tool for anyone needing quick note-taking and editing on the go.
 
 ## Features
 
 - **Simple Text Editing**: Create, open, edit, and save text files with ease.
+  
 - **Formatting Options**: Basic text formatting like changing font style, size, and color to personalize your notes.
 - **Find & Replace**: Quickly locate specific words or phrases within your text and replace them as needed.
 - **Word Count**: Real-time word and character count for keeping track of your writing goals.
@@ -19,11 +20,8 @@ Welcome to the Notepad Application! This lightweight, intuitive text editor is d
 - **Dark Mode**: Reduce eye strain by switching to dark mode when working in low-light environments.
 
 ## Getting Started
+To run this program you can follow my [user manual](https://github.com/Takayanagi-sensei/Notepad0.1/blob/master/User%20manual).
 
-1. **Download & Install**: Clone or download the repository and install the necessary dependencies.
-  
-2. **Launch the Application**: Run the application file to open Notepad.
-3. **Create or Open Notes**: Begin a new note, or open an existing one to start editing.
 
 ## Usage
 
