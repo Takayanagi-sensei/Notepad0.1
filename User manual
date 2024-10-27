@@ -19,9 +19,24 @@ Here is a step by step Guide for a user to install and run this file in his visu
    - Select **File** > **Open** > **Project/Solution** and navigate to the folder where you cloned the repository.
    - Open the solution file (usually with a `.sln` extension).
 
-3. **Restore NuGet Packages (if applicable)**:
-   - Go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution**.
-   - Click on **Restore** to download any required dependencies.
+3. **download NuGet Packages **:
+   - Go to **Project** > **Manage NuGet Packages**.
+
+
+| Package                              | Version/Details       |
+|--------------------------------------|-----------------------|
+| `EPPlus`                             | 7.4.1                 |
+| `EPPlus.Interfaces`                  | 6.1.1                 |
+| `EPPlus.System.Drawing`              | 6.1.1                 |
+| `Microsoft.IO.RecyclableMemoryStream`| 3.0.1                 |
+| `Microsoft.Office.Interop.Excel`     | 15.0.4795.1001        |
+| `System.Buffers`                     | 4.5.1                 |
+| `System.ComponentModel.Annotations`  | 5.0.0                 |
+| `System.Memory`                      | 4.5.5                 |
+| `System.Numerics.Vectors`            | 4.5.0                 |
+| `System.Runtime.CompilerServices.Unsafe` | 4.5.3             | 
+
+If You don't have these packages than download these or higher version to run the program smoothly.
 
 4. **Build and Run the Application**:
    - In the Solution Explorer, right-click on the project and select **Build**.
